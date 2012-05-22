@@ -4,7 +4,7 @@ function build() {
     mkdir -p .$input.tex_files
     cd .$input.tex_files
     TEXINPUTS=..:../bioinfo/:.:../../images/:../../figures/: xelatex $input
-    BSTINPUTS=:..:../bioinfo/: BIBINPUTS=:..:.: bibtex $input
+    BSTINPUTS=:..:../bioinfo/: BIBINPUTS=:..:.: biber $input
     cp $input.pdf ..
     cd ..
 }
